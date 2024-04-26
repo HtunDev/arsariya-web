@@ -1,0 +1,25 @@
+<app-modal-dialog id="errorDialog">
+
+  <h5 header><i class="bi bi-info-circle"></i> Message</h5>
+
+  <div body>
+    <p *ngIf="!message?.length">
+      {{message || 'Application Error.'}}
+    </p>
+
+    <ul *ngIf="message?.length">
+      <li *ngFor="let item of messages">{{item}}</li>
+    </ul>
+  </div>
+
+  <div footer>
+    <button (click)="close()" *ngIf="!logout" class="btn btn-outline-primary">
+      <i class="bi bi-x"></i> Close
+    </button>
+
+    <button (click)="closeAndLogout()" *ngIf="logout" class="btn btn-outline-primary">
+      <i class="bi bi-check"></i> OK
+    </button>
+
+  </div>
+</app-modal-dialog>

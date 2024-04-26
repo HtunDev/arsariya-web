@@ -1,0 +1,25 @@
+<div class="card" focusable>
+
+  <div class="card-body bg-success-subtle">
+    <h5>{{course.name}}</h5>
+    <div class="d-flex justify-content-between">
+      <span class="me-2 text-truncate">
+        <i class="bi bi-tag"></i> {{course.category.name}}
+      </span>
+      <span class="text-nowrap">
+        <i class="bi bi-clock"></i> {{course.hours}} Hours
+      </span>
+    </div>
+  </div>
+
+  <img class="course-list-image" [src]="course.image | courseImage" alt="">
+
+  <div class="card-body d-flex justify-content-between">
+    <span class="text-secondary">
+      <i class="bi bi-cart"></i> {{course.fees | number}} MMK
+    </span>
+    <a class="btn btn-sm btn-outline-success" (click)="showDetails()">
+      <i class="bi bi-send"></i>
+    </a>
+</div>
+</div>
